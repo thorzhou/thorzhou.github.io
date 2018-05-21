@@ -29,18 +29,30 @@ body{/*
     margin:0 auto;
 }
 h1{
-    font-size: 3em;
+    font-size: 4em;
     color: white;
     text-shadow: 1px 2px#22c3aa,2px 4px #aee2d9;
 }
+a{
+    text-decoration: none;
+}
+h2{
+    font-size: 3em;
+}
 .em1d5{
     font-size: 1.5em;
+}
+.darkblue{
+    color:  #006666;
 }
 p{
     color:  #006666;
 }
 .white{
     color:white;
+}
+.infocolor{
+    color: #aee2d9;
 }
 .light:hover{
     color: #b0ffff;
@@ -53,4 +65,33 @@ p{
     margin: 10px auto;
     border:3px solid whitesmoke;
     border-radius: 50%;
+}
+.row{
+    width: 100%;
+    height: 100px;
+    /* background-color: blue; */
+}
+.projectinfo{
+    float: left;
+    width: 80%;
+    height: 100%;
+    /* background-color: yellow; */
+    margin-left: 5%;
+    float: left;
+}
+.box100{
+    width: 100px;
+    height: 100%;
+    border-width: 2px;
+    border-radius: 50%;
+    background-color: #006666;
+    margin-left: 5%;
+    float: left;
+}
+
+#home{
+    visibility: hidden;
+}
+#projects{
+    visibility: visible;
 }
