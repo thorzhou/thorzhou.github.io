@@ -1,0 +1,29 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.layout-main{
+    display: flex;
+    width: 340px;
+    height: 330px;
+    flex-wrap: wrap;
+    /* background-color: gray; */
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: moccasin;
+    flex-shrink: 0;
+    border-radius: 15px;
+}
+.start,.stop{
+    width: 200px;
+    height: 50px;
+    font-size: 40px;
+    align-items: center;
+}
