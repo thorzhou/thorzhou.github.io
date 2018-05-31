@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #f0f0f0;
+}
+.heading{
+    width: 100vw;
+    height: 88px;
+    top: 0;
+    left: 0;
+    background-color: #29BDE0;
+}
+.btnMenu{
+    position: absolute;
+    left: 22px;
+    top: 28px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.btnMenu-row{
+    width: 34px;
+    height: 4px;
+    background: white;
+}
+.btnQuickStart{
+    position: relative;
+    /* top:125px; */
+    width: 88.75vw;
+    max-width: 800px;
+    height: 116px;
+    background-color: white;
+    margin: 30px auto 0px auto;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.btnQuickStartText{
+    justify-content: center;
+}
+.btnQuickStartImg{
+    justify-self: flex-end;
+}
