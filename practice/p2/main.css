@@ -8,8 +8,6 @@ body{
 .heading{
     width: 100vw;
     height: 88px;
-    top: 0;
-    left: 0;
     background-color: #29BDE0;
 }
 .btnMenu{
@@ -29,7 +27,6 @@ body{
 }
 .btnQuickStart{
     position: relative;
-    /* top:125px; */
     width: 88vw;
     max-width: 800px;
     height: 116px;
@@ -38,7 +35,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding:0px 10px; */
 }
 .btnQuickStartText{
     font-size: 3.5rem;
@@ -49,7 +45,7 @@ body{
     right: 10px;
 }
 .maskbox{
-    width: 88.75vw;
+    width: 88.8vw;
     max-width: 800px;
     height: 820px;
     margin: 30px auto;
@@ -84,7 +80,6 @@ body{
     margin: 30px auto;    
 }
 .versionSelect p{
-    /* display: block; */
     font-size: 3.2rem;
     line-height: 134px;
     color: white;
@@ -128,5 +123,4 @@ body{
 }
 .leftArrow{
     left: 10px;
-    /* visibility: hidden; */
 }
