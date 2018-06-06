@@ -1,126 +1,259 @@
-*{
-    padding: 0;
-    margin: 0;
+@media screen and (min-width:768px){
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color: #f0f0f0;
+    }
+    .heading{
+        width: 100vw;
+        height: 88px;
+        background-color: #29BDE0;
+    }
+    .btnMenu{
+        position: absolute;
+        left: 22px;
+        top: 28px;
+        height: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .btnMenu-row{
+        width: 34px;
+        height: 4px;
+        background: white;
+    }
+    .btnQuickStart{
+        position: relative;
+        width: 88vw;
+        max-width: 800px;
+        height: 116px;
+        background-color: white;
+        margin: 30px auto 30px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btnQuickStartText{
+        font-size: 3.5rem;
+        color: #d0d0d0;
+    }
+    .btnQuickStartImg{
+        position: absolute;
+        right: 10px;
+    }
+    .maskbox{
+        width: 88.8vw;
+        max-width: 800px;
+        height: 820px;
+        margin: 30px auto;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+    }
+    .gameSelectBox{
+        position: relative;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+    }
+    #game2{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .gameName{
+        font-size: 3.8rem;
+        color: #fbb435;
+        text-align: center;
+        padding:30px;
+        margin: 0px auto;
+        border-bottom: 1px solid #fbb435;
+    }
+    .versionSelect{
+        width: 81.5%;
+        height: 134px;
+        background-color: #69d1e9;
+        margin: 30px auto;    
+    }
+    .versionSelect p{
+        font-size: 3.2rem;
+        line-height: 134px;
+        color: white;
+        text-align: center;
+    }
+    .playing{
+        font-size: 2.45rem;
+        line-height: 2.34rem;
+        color: #787878;
+        text-align: center;
+    }
+    .navigateBar{
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle{
+        margin: 0 15px;
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+    .bgBlue{
+        background-color: #69d1e9;
+    }
+    .bgGray{
+        background-color: #f0f0f0;
+    }
+    .rightArrow,.leftArrow{
+        position: absolute;
+        display: block;
+        top: 50%;
+        width: 30px;
+        height: 60px;
+    }
+    .rightArrow{
+        right: 10px;
+    }
+    .leftArrow{
+        left: 10px;
+    }
 }
-body{
-    background-color: #f0f0f0;
-}
-.heading{
-    width: 100vw;
-    height: 88px;
-    background-color: #29BDE0;
-}
-.btnMenu{
-    position: absolute;
-    left: 22px;
-    top: 28px;
-    height: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-.btnMenu-row{
-    width: 34px;
-    height: 4px;
-    background: white;
-}
-.btnQuickStart{
-    position: relative;
-    width: 88vw;
-    max-width: 800px;
-    height: 116px;
-    background-color: white;
-    margin: 30px auto 0px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btnQuickStartText{
-    font-size: 3.5rem;
-    color: #d0d0d0;
-}
-.btnQuickStartImg{
-    position: absolute;
-    right: 10px;
-}
-.maskbox{
-    width: 88.8vw;
-    max-width: 800px;
-    height: 820px;
-    margin: 30px auto;
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    flex-shrink: 0;
-}
-.gameSelectBox{
-    position: relative;
-    background-color: white;
-    width: 100%;
-    height: 100%;
-}
-#game2{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.gameName{
-    font-size: 3.8rem;
-    color: #fbb435;
-    text-align: center;
-    padding:30px;
-    margin: 0px auto;
-    border-bottom: 1px solid #fbb435;
-}
-.versionSelect{
-    width: 81.5%;
-    height: 134px;
-    background-color: #69d1e9;
-    margin: 30px auto;    
-}
-.versionSelect p{
-    font-size: 3.2rem;
-    line-height: 134px;
-    color: white;
-    text-align: center;
-}
-.playing{
-    font-size: 2.45rem;
-    line-height: 2.34rem;
-    color: #787878;
-    text-align: center;
-}
-.navigateBar{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.circle{
-    margin: 0 15px;
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-}
-.bgBlue{
-    background-color: #69d1e9;
-}
-.bgGray{
-    background-color: #f0f0f0;
-}
-.rightArrow,.leftArrow{
-    position: absolute;
-    display: block;
-    top: 50%;
-    width: 30px;
-    height: 60px;
-}
-.rightArrow{
-    right: 10px;
-}
-.leftArrow{
-    left: 10px;
+@media screen and (max-width:767px)
+{
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color: #f0f0f0;
+    }
+    .heading{
+        width: 100vw;
+        height: 60px;
+        background-color: #29BDE0;
+    }
+    .btnMenu{
+        position: absolute;
+        left: 14px;
+        top: 19px;
+        height: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .btnMenu-row{
+        width: 23px;
+        height: 3px;
+        background: white;
+    }
+    .btnQuickStart{
+        position: relative;
+        width: 92vw;
+        height: 60px;
+        background-color: white;
+        margin: 30px auto 30px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btnQuickStartText{
+        font-size: 2rem;
+        color: #d0d0d0;
+    }
+    .btnQuickStartImg{
+        position: absolute;
+        right: 8px;
+        width: 12px;
+        height: 20px;
+    }
+    .maskbox{
+        width: 92vw;
+        height: 520px;
+        margin: 30px auto;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+    }
+    .gameSelectBox{
+        position: relative;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+    }
+    #game2{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .gameName{
+        font-size: 2.5rem;
+        color: #fbb435;
+        text-align: center;
+        padding:10px;
+        margin: 0px auto;
+        border-bottom: 1px solid #fbb435;
+    }
+    .versionSelect{
+        width: 80%;
+        height: 90px;
+        background-color: #69d1e9;
+        margin: 15px auto;    
+    }
+    .versionSelect p{
+        font-size: 2.5rem;
+        line-height: 90px;
+        color: white;
+        text-align: center;
+    }
+    .playing{
+        font-size: 1.7rem;
+        /* line-height: 2.34rem; */
+        color: #787878;
+        text-align: center;
+    }
+    .navigateBar{
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle{
+        margin: 0 10px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    .bgBlue{
+        background-color: #69d1e9;
+    }
+    .bgGray{
+        background-color: #f0f0f0;
+    }
+    .rightArrow,.leftArrow{
+        position: absolute;
+        display: block;
+        top: 50%;
+        width: 20px;
+        height: 40px;
+    }
+    .rightArrow{
+        right: 6px;
+    }
+    .leftArrow{
+        left: 6px;
+    }
 }
