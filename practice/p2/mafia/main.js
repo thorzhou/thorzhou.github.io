@@ -2,23 +2,46 @@ var playerIdentityList = new Array();
 var num = 4;
 var kn = 1;
 function gameStart() {
+    if(!checkNumOfPlayers()){
+        return;
+    }
     setPlayerIdentities();
 }
 
-function getNumOfPlayers(params) {
-    num = document.getElementById('playerSetting').value;
-    var killer = document.getElementById('numOfKiller');
-    var civilian = document.getElementById('numOfCivilian');
+function checkNumOfPlayers() {
     var reg = /^\d{1,2}$/;
+    num = document.getElementById('playerSetting').value;
     num = num.replace(/\s/g, "");
     if (reg.test(num)) {
         if(num < 4 || num > 18)
         {
             alert('请输入正确的玩家人数');
-            return;
+            return false;
         }
     }else{
         alert('请输入正确的玩家人数');
+        return false;
+    }
+    return true;
+}
+
+function getNumOfPlayers(params) {
+    // num = document.getElementById('playerSetting').value;
+    var killer = document.getElementById('numOfKiller');
+    var civilian = document.getElementById('numOfCivilian');
+    // var reg = /^\d{1,2}$/;
+    // num = num.replace(/\s/g, "");
+    // if (reg.test(num)) {
+    //     if(num < 4 || num > 18)
+    //     {
+    //         alert('请输入正确的玩家人数');
+    //         return;
+    //     }
+    // }else{
+    //     alert('请输入正确的玩家人数');
+    //     return;
+    // }
+    if(!checkNumOfPlayers()){
         return;
     }
     kn = Math.floor(num/3);
