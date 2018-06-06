@@ -9,3 +9,9 @@ if(!localStorage.lastGame){
 const gameMap = {
     '杀人游戏简单版': './mafia'
 }
+
+function lastPlayed() {
+    if(!localStorage.lastGame){
+        window.location.href =  gameMap[localStorage.lastGame];
+    }    
+}
