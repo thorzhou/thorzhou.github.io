@@ -12,6 +12,7 @@ function checkNumOfPlayers() {
     var reg = /^\d{1,2}$/;
     num = document.getElementById('playerSetting').value;
     num = num.replace(/\s/g, "");
+    document.getElementById('playerSetting').value = num;
     if (reg.test(num)) {
         if(num < 4 || num > 18)
         {
@@ -26,21 +27,8 @@ function checkNumOfPlayers() {
 }
 
 function getNumOfPlayers(params) {
-    // num = document.getElementById('playerSetting').value;
     var killer = document.getElementById('numOfKiller');
     var civilian = document.getElementById('numOfCivilian');
-    // var reg = /^\d{1,2}$/;
-    // num = num.replace(/\s/g, "");
-    // if (reg.test(num)) {
-    //     if(num < 4 || num > 18)
-    //     {
-    //         alert('请输入正确的玩家人数');
-    //         return;
-    //     }
-    // }else{
-    //     alert('请输入正确的玩家人数');
-    //     return;
-    // }
     if(!checkNumOfPlayers()){
         return;
     }
@@ -50,25 +38,7 @@ function getNumOfPlayers(params) {
 }
 
 function setPlayerIdentities(){
-    // var num = document.getElementById('playerSetting').value;
-    // var killer = document.getElementById('numOfKiller');
-    // var civilian = document.getElementById('numOfCivilian');
     playerIdentityList.splice(0,playerIdentityList.length);
-    // var reg = /^\d{1,2}$/;
-    // num = num.replace(/\s/g, "");
-    // if (reg.test(num)) {
-    //     if(num < 4 || num > 18)
-    //     {
-    //         alert('请输入正确的玩家人数');
-    //         return;
-    //     }
-    // }else{
-    //     alert('请输入正确的玩家人数');
-    //     return;
-    // }
-    // var kn = Math.floor(num/3);
-    // killer.innerHTML = '杀手'+ kn + ' 人';
-    // civilian.innerHTML = '平民' + (num-kn) + ' 人';
     resetIdentity(num,kn);
     console.log(playerIdentityList);
 }
@@ -100,4 +70,34 @@ function shuffle(a) {
 document.onkeydown = function(event){
     var e = event || window.event || arguments.callee.caller.arguments[0];
     // if(e && e.keyCode == 27)//esc
+}
+
+var slider = document.getElementById('slideNum');
+slider.min = 4;
+slider.max = 18;
+slider.step = 1;
+slider.value = 4;
+
+function sliderCallback() {
+    var inputNum = document.getElementById('playerSetting');
+    var p = Math.floor((slider.value-4) / 14 * 100);
+    // var bg = 'linear-gradient(to right, #fab344 '+p+'%, white '+(100 - p)+'%, white)';
+    // slider.style.background = bg;
+    slider.style.backgroundSize = p + '% 100%';
+    inputNum.value = slider.value;
+    getNumOfPlayers();
+}
+
+function minus() {
+    if(parseInt(slider.value) > 4){
+        slider.value -= 1;
+        sliderCallback();
+    }
+}
+
+function plus() {
+    if(parseInt(slider.value) < 18){
+        slider.value = parseInt(slider.value) + 1;
+        sliderCallback();
+    }
 }

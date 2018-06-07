@@ -26,12 +26,23 @@
     </div>
     <div class="keep"></div>
     <div class="settingBox">
-        <p class="settingBox-text">请输入玩家数量</p>
-        <div class="numOfPlayer">
-            <input type="text" id="playerSetting" onchange="getNumOfPlayers()" value="4">
+        <div class="normalSet">
+            <p class="settingBox-text">请输入玩家数量</p>
+            <div class="numOfPlayer">
+                <input type="text" id="playerSetting" onchange="getNumOfPlayers()" value="4">
+            </div>
+            <p class="comment">玩家数量为4-18</p>
         </div>
-        <p class="comment">玩家数量为4-18</p>
-        <!-- <p id='hint'>请输入正确玩家人数</p> -->
+        <div class="slider">
+            <div class="box18" onclick="minus()">
+                <img src="../images/hori.png" alt="minus" class="minusImg">
+            </div>
+            <input type="range" id="slideNum" onchange="sliderCallback()">
+            <div class="box18" onclick="plus()">
+                <img src="../images/hori.png" alt="minus" class="minusImg">
+                <img src="../images/vertial.png" alt="plus" class="plusImg">
+            </div>
+        </div>
     </div>
     <div class="btnStart">
         <input type="button" value="去发牌" onclick="gameStart()"/>    
