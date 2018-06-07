@@ -6,6 +6,7 @@ function gameStart() {
         return;
     }
     setPlayerIdentities();
+    window.location.href = './play';
 }
 
 function checkNumOfPlayers() {
