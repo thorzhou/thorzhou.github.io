@@ -5,7 +5,9 @@ function gameStart() {
     if(!checkNumOfPlayers()){
         return;
     }
-    setPlayerIdentities();
+    var listed = new Object();
+    listed.id = setPlayerIdentities();
+    sessionStorage.setItem("playerIdentitiesList",listed.id);
     window.location.href = './play';
 }
 
@@ -27,7 +29,7 @@ function checkNumOfPlayers() {
     return true;
 }
 
-function getNumOfPlayers(params) {
+function getNumOfPlayers() {
     var killer = document.getElementById('numOfKiller');
     var civilian = document.getElementById('numOfCivilian');
     if(!checkNumOfPlayers()){
@@ -42,6 +44,7 @@ function setPlayerIdentities(){
     playerIdentityList.splice(0,playerIdentityList.length);
     resetIdentity(num,kn);
     console.log(playerIdentityList);
+    return playerIdentityList;
 }
 
 function resetIdentity(len,kn){

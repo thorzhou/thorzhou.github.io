@@ -1,0 +1,97 @@
+body{
+    background: #5bc0de;
+}
+#nav-back{
+    position: absolute;
+    float: none;
+    left: 5px;
+}
+#nav-text{
+    font-size: 2em;
+    position: absolute;
+    left: 50%;
+    margin: 0px 0px 0px -56px;
+    line-height: 50px;
+}
+#nav-return{
+    position: absolute;
+    right: 5px;
+}
+.layout-body{
+    position: relative;
+    width: 80%;
+    height: 60vh;
+    margin: 0px auto;
+}
+#numCircle{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+    text-align: center;
+    line-height: 50px;
+    color: moccasin;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 2;
+}
+#box{
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    height: 100%;
+    background: moccasin;
+    z-index: 0;
+}
+#hidePage{
+    width: 60%;
+    height: 48vw;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    visibility: hidden;
+}
+#hide-identity{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+#showPage{
+    width: 60%;
+    height: 60vw;
+    /*background: white;*/
+    position: absolute;
+    /*border-radius: 50%;*/
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+#show-identity{
+    width: 100%;
+    height: 80%;
+    border-radius: 50%;
+}
+h2{
+    color: #5bc0de;
+    text-align: center;
+}
+#btn-next {
+    position: absolute;
+    width: 80%;
+    height: 50px;
+    background: orange;
+    left: 10vw;
+    bottom: 30px;
+    font-size: 2em;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+}
