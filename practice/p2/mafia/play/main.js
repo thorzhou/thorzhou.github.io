@@ -1,4 +1,4 @@
-var idList = sessionStorage.getItem("playerIdentitiesList");
+let idList = sessionStorage.getItem("playerIdentitiesList");
 
 const idMap = {
     'Civilian':'平民',
@@ -7,9 +7,9 @@ const idMap = {
 idList= idList.split(',');
 idList.forEach(function (item,index) {
     idList[index] = idMap[item];
-})
+});
 console.log(idList);
 
-$(document),ready(function () {
-    $('#numCircle').innerText = 1;
-})
+$(document).ready(function () {
+
+});
