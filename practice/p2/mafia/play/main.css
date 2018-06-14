@@ -19,7 +19,7 @@ body{
 }
 .layout-body{
     position: relative;
-    width: 250px;
+    width: 252px;
     height: 400px;
     margin: 0 auto;
 }
@@ -84,22 +84,57 @@ h2{
     text-align: center;
 }
 #btn-next {
-    position: absolute;
+    /*position: absolute;*/
     width: 60%;
     /*max-width: 500px;*/
     height: 50px;
+    margin: 75px auto;
     background: orange;
-    left: 20vw;
-    bottom: 30px;
+    /*left: 20vw;*/
+    /*bottom: 30px;*/
     font-size: 2em;
     line-height: 50px;
     text-align: center;
     color: white;
 }
-
+#judge-page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: flex-start;
+    align-items: flex-start;
+}
+.card{
+    width: 51px;
+    height: 60px;
+    /*background: yellow;*/
+    margin: 10px 5px;
+    border: 2px solid white;
+}
+.card h3{
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 40px;
+    color: black;
+    background: moccasin;
+    margin: 0;
+    padding: 0;
+}
+.card p{
+    text-align: center;
+    line-height: 16px;
+    color: white;
+    background: #92b7a5;
+    margin: 0;
+    padding: 0;
+}
 @media screen and (min-width: 480px){
     .layout-body{
         width: 300px;
         height: 450px;
+    }
+    .card {
+        width: 65px;
     }
 }
