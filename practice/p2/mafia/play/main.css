@@ -103,7 +103,7 @@ h2{
     display: flex;
     flex-wrap: wrap;
     justify-items: flex-start;
-    align-items: flex-start;
+    align-items: center;
 }
 .card{
     width: 51px;
