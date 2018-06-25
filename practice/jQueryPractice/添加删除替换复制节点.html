@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>nodes</title>
+    <script src="../../vendor/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // var $li = "<li>newNode.</li>";
+            // var ul = $("ul");
+            $("button").click(function () {
+                // 内部插入
+                // append(content|fn) //last
+                // $("ul").append($li);
+                // appendTo(content) //last
+                // $($li).appendTo($("ul"));
+                // prepend(content|fn) //front
+                // $("ul").prepend($li);
+                // prependTo(content) //front
+                // $($li).prependTo($("ul"));
+                // 外部插入
+                // after(content|fn)
+                // ul.after($li);
+                // before(content|fn)
+                // ul.before($li);
+                // insertAfter(content)
+                // $($li).insertAfter(ul);
+                // insertBefore(content// )
+                // $($li).insertBefore(ul);
+
+                // empty()    element still exists. html deleted.
+                // $("div").empty();
+                // remove([expr])   the hole element be deleted.
+                // $("li").remove(".item");
+                // detach([expr])
+                // $("li").detach(".item");
+
+                // replaceWith(content|fn)
+                // $("h1").replaceWith("<p>replaced with p</p>");
+                // replaceAll(selector)
+                // $("<p>replaced with p1</p>").replaceAll($("h1"));
+            });
+
+            // clone([Even[,deepEven]])
+            $("button").eq(0).click(function () {
+                var $li = $("li:first").clone(false);
+                $("ul").append($li);
+            });
+            $("button").eq(1).click(function () {
+                var $li = $("li:first").clone(true);
+                $("ul").append($li);
+            });
+            $("li").click(function () {
+                alert($(this).html());
+            });
+        })
+    </script>
+</head>
+<body>
+<button>less</button>
+<button>deep</button>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<!--<button>replace node</button>-->
+<!--<h1>h1</h1>-->
+<!--<h1>h1</h1>-->
+<!--<p>p</p>-->
+
+<!--<button>添加节点</button>-->
+<!--<ul>-->
+    <!--<li>第一个</li>-->
+    <!--<li>第一个</li>-->
+    <!--<li>第一个</li>-->
+<!--</ul>-->
+
+<!--<button>delete node</button>-->
+<!--<ul>-->
+    <!--<li class="item">1</li>-->
+    <!--<li>2</li>-->
+    <!--<li class="item">3</li>-->
+    <!--<li>4</li>-->
+    <!--<li class="item">5</li>-->
+<!--</ul>-->
+<!--<div>in DIV-->
+    <!--<p>P line.</p>-->
+<!--</div>-->
+</body>
+</html>
