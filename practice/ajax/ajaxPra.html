@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax-get</title>
+    <script>
+        window.onload = function (ev) {
+            var Btn = document.querySelector("button");
+            Btn.onclick = function (ev1) {
+                //1.create a async object
+                var xmlhttp = new XMLHttpRequest();
+                //2.set request type and url
+                //open(method:"GET"/"POST", URl: , async: true/false
+                xmlhttp.open("GET", "ajaxget.php", true);
+                //3.send request
+                xmlhttp.send();
+                //4.watch state change
+                xmlhttp.onreadystatechange = function (ev2) {
+                    /*
+                    * 0: request not init
+                    * 1: server connection created
+                    * 2: request be accepted
+                    * 3: request processing
+    a                * 4: request done, everything complete
+                    * */
+                    if (xmlhttp.readyState === 4) {
+                        // judge is request success
+                        if (xmlhttp.status >= 200 && xmlhttp.status < 300 || xmlhttp.status == 304) {
+                            // 5.just process your data
+                        }else{
+                            // request fail
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button>send Ajax request</button>
+</body>
+</html>

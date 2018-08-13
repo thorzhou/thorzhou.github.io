@@ -74,6 +74,40 @@
                 this.length = 1;
                 return this;
             }
+        },
+        jquery: "1.1.0",
+        selector:"",
+        length: 0,
+        push: [].push,
+        sort: [].sort,
+        splice: [].splice,
+        toArray: function () {
+            return [].slice.call(this);
+        },
+        get: function (num) {
+            if (arguments.length == 0){
+                return this.toArray();
+            } else if (num >= 0){
+                return this[num];
+            } else {
+                return this[this.length + num];
+            }
+        },
+        eq: function (num) {
+            if (arguments.length == 0){
+                return new cjQuery();
+            } else {
+                return cjQuery(this.get(num));
+            }
+        },
+        first: function () {
+            return this.eq(0);
+        },
+        last: function () {
+            return this.eq(-1);
+        },
+        each: function (fn) {
+            return cjQuery.each(this, fn);
         }
     };
     cjQuery.extend = cjQuery.prototype.extend = function(obj){
@@ -125,9 +159,182 @@
                     }
                 })
             }
+        },
+        each: function (obj, fn) {
+            //判断是否数组
+            if (cjQuery.isArray(obj)){
+                for (var i=0; i< obj.length; i++){
+                    var res = fn.call(obj[i],i, obj[i]);
+                    if (res === false){
+                        break;
+                    }
+                }
+            }
+            //判断是否对象
+            else{
+                for (var key in obj){
+                    var tmp = fn.call(obj[key],key, obj[key]);
+                    if (tmp === false){
+                        break;
+                    }
+                }
+            }
+            return obj;
+        },
+        map: function (obj, fn) {
+            //默认返回空数组
+            var res = [];
+            if (cjQuery.isArray(obj)){
+                for (var i = 0; i < obj.length; i++){
+                    var val = fn(obj[i], i);
+                    if (val){
+                        res.push(val);
+                    }
+                } 
+            }
+            else if (cjQuery.isObject(obj)){
+                for (var key in obj){
+                    var tmp = fn(obj[key], key);
+                    if (tmp){
+                        res.push(tmp);
+                    }
+                }
+            }
+            return res;
+        },
+        appendTo: function (sel) {
+            var $sel = $(sel);
+            var $this = this;
+            var res = [];
+            // for (var i = 0; i < $sel.length; i++) {
+            //     var targetEle = $sel[i];
+            //     for (var j = 0; j < $this.length; j++) {
+            //         var $source = $this[j];
+            //         if (i === 0) {
+            //             targetEle.appendChild($source);
+            //         }
+            //         else{
+            //             var tmp = $source.cloneNode(true);
+            //             targetEle.appendChild(tmp);
+            //         }
+            //     }
+            // }
+            $.each($sel,function (key, value) {
+                $.each($this, function (k, v) {
+                    if (key === 0) {
+                        value.appendChild(v);
+                        res.push(v);
+                    }
+                    else{
+                        var tmp = v.cloneNode(true);
+                        value.appendChild(tmp);
+                        res.push(tmp);
+                    }
+                })
+            });
+            return $(res);
+        },
+        prependTo: function (sel) {
+            var $this = this;
+            var $sel = $(sel);
+            var res = [];
+            $.each($sel, function (key, value) {
+                $.each($this, function (k, v) {
+                    if (key === 0) {
+                        value.insertBefore(v, value.firstChild);
+                        res.push(v);
+                    }
+                    else {
+                        var tmp = v.cloneNode(true);
+                        value.insertBefore(tmp, value.firstChild);
+                        res.push(tmp);
+                    }
+                });
+                return $(res);
+            })
+        },
+        append: function (str) {
+            //参数是字符串时,直接添加到元素内html最后
+            if (cjQuery.isString(str)) {
+                this[0].html += str;
+            }
+            //方法调用对象和参数对象顺序不同
+            else {
+                $(str).appendTo(this);
+            }
+            //返回值不同
+            return this;
+        },
+        prepend: function (str) {
+            if (cjQuery.isString(str)) {
+                this[0].html = str + this[0].html;
+            }else{
+                $(str).prependTo(this);
+            }
+            return this;
         }
     });
+    cjQuery.prototype.extend({
+        empty:function () {
+            this.each(function (key, value) {
+                value.innerHTML = "";
+            });
+            //方便链式编程
+            return this;
+        },
+        remove: function (sel) {
+            if (arguments.length === 0){
+                this.each(function (key, value) {
+                    //根据遍历到的元素找到父元素，才能删除该元素
+                    var parent = value.parentNode;
+                    parent.removeChild(value);
+                });
+            }
+            else{
+                var $this = this;
+                //1.根据传入的选择器找到对应的元素
+                $(sel).each(function (key, value) {
+                    //2.遍历找到的元素，获取对应的类型
+                    var type = value.tagName;
+                    //3.遍历指定的元素
+                    $this.each(function (k, v) {
+                        //4.获取指定元素的类型
+                        var t = v.tagName;
+                        if (t === type) {
+                            //根据遍历到的元素找到父元素，才能删除该元素
+                            var parent = value.parentNode;
+                            parent.removeChild(value);
+                        }
+                    })
+                })
+                //5.判断找到的元素的类型和指定元素的类型是否相同
+            }
 
+        },
+        html: function (content) {
+            if(arguments.length === 0){
+                return this[0].innerHTML;
+            }
+            else{
+                this.each(function (key, value) {
+                    value.innerHTML = content;
+                })
+            }
+        },
+        text: function (content) {
+            if (arguments.length === 0) {
+                var res = "";
+                this.each(function (key, value) {
+                    res += value.innerText;
+                })
+            }
+            else{
+                this.each(function (key, value) {
+                    value.innerText = content;
+                })
+            }
+        }
+    });
     cjQuery.prototype.init.prototype = cjQuery.prototype;
     window.cjQuery = window.$ = cjQuery;
 })(window);
