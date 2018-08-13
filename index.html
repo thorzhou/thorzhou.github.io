@@ -13,113 +13,121 @@
       window.onload DOMContentLoaded
       创建10个<a>点击弹出来对应的序号
       模块加载器，实现类似require。js
-      数组随机排序，拼接
-      
-      变量类型
-      值类型和引用类型
-      number boolean undefined string
-      object array function null
-      typeof	number boolean undefined string object（ {} [] null ） function    typeof []  只能区分值类型的详细类型
-      
-      NaN是一个特殊值，表示某些算数运算的结果不是数字， 使用isNaN（）来判断
-      
+      数组随机排序，拼接</p>
+  <p>变量类型</p>    
+  <p>值类型和引用类型</p>   
+  <p>number boolean undefined string</p>    
+  <p>object array function null</p>   
+  <p>typeof	number boolean undefined string object（ {} [] null ） function    typeof []  只能区分值类型的详细类型</p>   
+  <p>
+      NaN是一个特殊值，表示某些算数运算的结果不是数字， 使用isNaN（）来判断    
+  </p>   
+  <p>
       变量计算-强制类型转换
-      字符串拼接 		100 + '10'
-      ==运算符		100 == '100'  0 == ''  null == undefined
-      if语句			c = ''   	if(c)	
-      逻辑运算符		10&&0 //0		''||'abc' //'abc'   !window.abc //true		怎么查看变量会被转化为true/false  !!a
-      PS: == 会导致类型转换，尽量用===， 类似object.a == null 等同于 object.a === null || object.a === undefined 判断对象中属性是否定义，判断函数中参数是否传递
-      
-      JS中内置函数-----数据封装类对象
-      Object/Array/Boolean/Number/String/Function/Date/RegExp/Error
-      内置对象
-      Math Json
-      
-      JSON
-      JSON是一个JS对象，也是一种数据格式
-      JSON.stringify({a:10,b:20});		//JSON对象变为字符串
-      JSON.parse('{"a":10,"b":20}');		//字符串变为JSON
-      
-      原型和原型链
-      题目：	如何准确判断一个变量是数组类型			var arr = [];	 arr instanceof Array
-          写一个原型链继承的例子					把父类赋值给子类的prototype属性
-          描述new一个对象的过程
-            创建一个新对象；this指向这个新对象；执行代码，对this赋值；返回this
-          zepto源码中如何使用原型链
-      构造函数
-      function Foo(name,age){			//注意首字母大写
-        this.name = name;
-        this.age = age;
-        this.class = 'class-1'
-        //return this
-      }
-      var f = new Foo('zyq',28);
-      构造函数-扩展
-      var a = {};			var a = new Object();
-      var a = [];			var a = new Array();
-      function Foo(){};	var Foo = new Function(){};
-      原型规则和示例
-      1.所有引用类型(array object function)都具有对象特性，即可自由扩展属性（除了null）
-      2.所有引用类型都有__proto__属性，属性值是一个普通对象
-      3.所有函数都有一个prototype属性，属性值都是一个普通对象
-      4.__proto__属性值指向它的构造函数的prototype属性值，即===
-      5.当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的__proto__（即构造函数的prototype）中寻找
-      function Foo(name){
-        this.name = name;
-      }
-      Foo.prototype.alertName = function () {
-        alert(this.name);
-      }
-      var f = new Foo('zyq')
-      f.printName = function() {
-        console.log(this.name)
-      }
-      f.printName();
-      f.alertName();
-      for(item in f){
-      //高级浏览器已经在for in中屏蔽了来自原型的属性，但是这里还是建议加上
-        if(f.hasOwnProperty(item)){
-          console.log(item);
-        }
-      }
-      原型链
-      f.__proto__ === Foo.prototype Foo.prototype.__proto__ === Object.prototype Object.prototype.__proto__ = null
-      instanceof判断一个函数是否是一个变量的构造函数		变量instanceof函数
-      f instanceof Foo 
-      f的__proto__一层层往上看能不能找到Foo.prototype
-      f instanceof Object 也是true 
-      原型链继承的例子：
-      function Elem(id){
-        this.el = document.getElementById(id);
-      }
-      Elem.prototype.html=function(val){
-        var elem = this.el;
-        if(val){
-          elem.innerHTML = val;
-          return this;
-        }else{
-          return elem.innerHTML;
-        }
-      }
-      var div1 = new Elem('detail')
-      div1.html();
-      
-      作用域和闭包
-      题目：	说一下对变量提升的理解
-          说明this几种不同的使用场景
-          创建10个a标签，点击的时候弹出来对应的序号
-          如何理解作用域
-          实际开发中闭包的作用
-      执行上下文
-      范围：一段<script>或者一个函数
-      全局：变量定义undefined、函数						一段script
-      函数：变量定义undefined、函数声明、this、arguments 	函数
-      this 
-      this要在执行时才能确认值
-      作用域 
-      作用域链 
-      闭包 
   </p>
+      
+  <p>字符串拼接 		100 + '10'</p>    
+  <p>==运算符		100 == '100'  0 == ''  null == undefined</p>   
+  <p>if语句			c = ''   	if(c)	</p>    
+  <p>
+      逻辑运算符		10&&0 //0		''||'abc' //'abc'   !window.abc //true		怎么查看变量会被转化为true/false  !!a
+  </p> 
+  <p>
+      PS: == 会导致类型转换，尽量用===， 类似object.a == null 等同于 object.a === null || object.a === undefined 判断对象中属性是否定义，判断函数中参数是否传递
+  </p>  
+  <p>JS中内置函数-----数据封装类对象</p>   
+  <p>Object/Array/Boolean/Number/String/Function/Date/RegExp/Error</p>    
+  <p>内置对象</p>  
+  <p>Math Json</p>    
+  <p>JSON</p>   
+  <p>JSON是一个JS对象，也是一种数据格式</p>   
+  <p>JSON.stringify({a:10,b:20});		//JSON对象变为字符串</p>    
+  <p>JSON.parse('{"a":10,"b":20}');		//字符串变为JSON</p>    
+  <p>原型和原型链</p>    
+  <p>题目：	如何准确判断一个变量是数组类型			var arr = [];	 arr instanceof Array</p>    
+  <p>写一个原型链继承的例子					把父类赋值给子类的prototype属性</p>    
+  <p>描述new一个对象的过程</p>    
+  <p>创建一个新对象；this指向这个新对象；执行代码，对this赋值；返回this</p>   
+  <p>zepto源码中如何使用原型链</p>        
+  <p>构造函数</p>        
+  <p>function Foo(name,age){			//注意首字母大写</p>        
+  <p>this.name = name;</p>       
+  <p>this.age = age;</p>   
+  <p>this.class = 'class-1'</p>   
+  <p>//return this</p>      
+  <p>}</p>      
+  <p>var f = new Foo('zyq',28);</p>     
+  <p>构造函数-扩展</p>     
+  <p>var a = {};			var a = new Object();</p>  
+  <p>var a = [];			var a = new Array();</p>    
+  <p>function Foo(){};	var Foo = new Function(){};</p>    
+  <p>原型规则和示例</p>   
+  <p>1.所有引用类型(array object function)都具有对象特性，即可自由扩展属性（除了null）</p>   
+  <p>2.所有引用类型都有__proto__属性，属性值是一个普通对象</p>   
+  <p>3.所有函数都有一个prototype属性，属性值都是一个普通对象</p>    
+  <p>4.__proto__属性值指向它的构造函数的prototype属性值，即===</p>   
+  <p>
+      5.当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的__proto__（即构造函数的prototype）中寻找    
+  </p>    
+  <p>function Foo(name){</p>    
+  <p>this.name = name;</p>   
+  <p>}</p>   
+  <p>Foo.prototype.alertName = function () {</p>     
+  <p>alert(this.name);</p>   
+  <p>}</p>   
+  <p>var f = new Foo('zyq')</p>     
+  <p>f.printName = function() {</p>   
+  <p>console.log(this.name)</p>   
+  <p>}</p>  
+  <p>f.printName();</p>      
+  <p>f.alertName();</p>  
+  <p>for(item in f){</p>  
+  <p>//高级浏览器已经在for in中屏蔽了来自原型的属性，但是这里还是建议加上</p>   
+  <p>if(f.hasOwnProperty(item)){</p>   
+  <p>console.log(item);</p> 
+  <p>}</p>     
+  <p>}</p>       
+  <p>原型链</p>     
+  <p>
+      f.__proto__ === Foo.prototype Foo.prototype.__proto__ === Object.prototype Object.prototype.__proto__ = null
+  </p>
+  <p>instanceof判断一个函数是否是一个变量的构造函数		变量instanceof函数</p>  
+  <p>f instanceof Foo </p>    
+  <p>f的__proto__一层层往上看能不能找到Foo.prototype</p>   
+  <p>f instanceof Object 也是true </p>   
+  <p>原型链继承的例子：</p>   
+  <p>function Elem(id){</p> 
+  <p>this.el = document.getElementById(id);</p>
+  <p>}</p>      
+  <p>Elem.prototype.html=function(val){</p>   
+  <p>var elem = this.el;</p>   
+  <p>if(val){</p>    
+  <p>elem.innerHTML = val;</p>     
+  <p>return this;</p>       
+  <p>}else{</p>       
+  <p>return elem.innerHTML;</p>    
+  <p>}</p>       
+  <p>}</p>     
+  <p>var div1 = new Elem('detail')</p>    
+  <p>div1.html();</p>   
+  <p>作用域和闭包</p>    
+  <p>题目：	说一下对变量提升的理解</p>   
+  <p>说明this几种不同的使用场景</p>  
+  <p>创建10个a标签，点击的时候弹出来对应的序号</p>  
+  <p>如何理解作用域</p>     
+  <p>实际开发中闭包的作用</p>       
+  <p>执行上下文</p>    
+  <p>范围：一段script或者一个函数</p>       
+  <p>全局：变量定义undefined、函数						一段script</p>   
+  <p>函数：变量定义undefined、函数声明、this、arguments 	函数</p>  
+  <p>this</p>  
+  <p>this要在执行时才能确认值</p>
+  <p>作用域</p>   
+  <p>作用域链</p>   
+  <p>闭包</p>     
+       
+       
+  
  
 
 </body>
