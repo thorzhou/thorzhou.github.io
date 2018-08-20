@@ -174,6 +174,50 @@
   <p>2.网络请求：ajax请求，动态<img>加载</p>
   <p>3.事件绑定</p>
   <p>异步函数在被定义时会暂存起来，等到空闲后按照完成顺序执行</p>
-  <p></p>
+  <h3>题目：</h3>
+  <p>获取2017-06-10格式的日期</p>
+  <p>获取随机数，要求长度一致的字符串格式</p>
+  <p>写一个能遍历对象和数组的通用forEach函数</p>
+  <p>Date.now()//当前事件的毫秒数</p>
+  <p>var dt = new Date();</p>
+  <p>dt.getTime()</p>
+  <p>dt.getFullYear()</p>
+  <p>dt.getMonth()</p>
+  <p>dt.getDate()</p>
+  <p>dt.getHours()</p>
+  <p>dt.getMinites()</p>
+  <p>dt.getSeconds()</p>
+  <p>Math.random()</p>
+  <p>url后面，随时改变和清除缓存</p>
+  <h3>数组</h3>
+  <p>forEach遍历</p>
+  <p>   arr.forEach(funtion(item,index){})</p>
+  <p>every判断所有元素是否都符合条件</p>
+  <p>   var result = arr.every(funtion(item,index){</p>
+  <p>       if(item < 4) { return true; }})</p>
+  <p>some判断是否有至少一个元素符合条件</p>
+  <p>   var result = arr.some(funtion(item,index){</p>
+  <p>       if(item < 4) { return true; }})</p>
+  <p>sort</p>
+  <p>   arr  = arr.sort(funtion(a,b){</p>
+  <p>           return a-b //从小到大排序</p>
+  <p>           return b-a //从大到校排序</p>
+  <p>}</p>
+  <p>map对元素重新组装，生成新数组</p>
+  <p>   arr = arr.map(function(item,index){</p>
+  <p>       return '<b>'+item+'</b>'</p>
+  <p>   })</p>
+  <p>filter过滤符合条件的元素</p>
+  <p>   arr = arr.filter(funtion(item,index){</p>
+  <p>       if(item >= 2){</p>
+  <p>           return true</p>
+  <p>       }</p>
+  <p>   })</p>
+  <h3>对象api</h3>
+  <p>for(key in obj){</p>
+  <p>   if(obj.hasOwnProperty(key){</p>
+  <p>       return obj.key</p>
+  <p>   }</p>
+  <p>})</p>
 </body>
 </html>
