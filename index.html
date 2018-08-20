@@ -19,7 +19,7 @@
       创建10个<a>点击弹出来对应的序号
       模块加载器，实现类似require。js
       数组随机排序，拼接</p>
-  <p>变量类型</p>    
+  <h3>变量类型</h3>    
   <p>值类型和引用类型</p>   
   <p>number boolean undefined string</p>    
   <p>object array function null</p>   
@@ -27,9 +27,9 @@
   <p>
       NaN是一个特殊值，表示某些算数运算的结果不是数字， 使用isNaN（）来判断    
   </p>   
-  <p>
+  <h3>
       变量计算-强制类型转换
-  </p>
+  </h3>
       
   <p>字符串拼接 		100 + '10'</p>    
   <p>==运算符		100 == '100'  0 == ''  null == undefined</p>   
@@ -40,21 +40,21 @@
   <p>
       PS: == 会导致类型转换，尽量用===， 类似object.a == null 等同于 object.a === null || object.a === undefined 判断对象中属性是否定义，判断函数中参数是否传递
   </p>  
-  <p>JS中内置函数-----数据封装类对象</p>   
+  <h3>JS中内置函数-----数据封装类对象</h3>   
   <p>Object/Array/Boolean/Number/String/Function/Date/RegExp/Error</p>    
-  <p>内置对象</p>  
+  <h3>内置对象</h3>  
   <p>Math Json</p>    
-  <p>JSON</p>   
+  <h3>JSON</h3>   
   <p>JSON是一个JS对象，也是一种数据格式</p>   
   <p>JSON.stringify({a:10,b:20});		//JSON对象变为字符串</p>    
   <p>JSON.parse('{"a":10,"b":20}');		//字符串变为JSON</p>    
-  <p>原型和原型链</p>    
-  <p>题目：	如何准确判断一个变量是数组类型			var arr = [];	 arr instanceof Array</p>    
+  <h3>原型和原型链</h3>    
+  <h3>题目：	如何准确判断一个变量是数组类型			var arr = [];	 arr instanceof Array</h3>    
   <p>写一个原型链继承的例子					把父类赋值给子类的prototype属性</p>    
   <p>描述new一个对象的过程</p>    
   <p>创建一个新对象；this指向这个新对象；执行代码，对this赋值；返回this</p>   
   <p>zepto源码中如何使用原型链</p>        
-  <p>构造函数</p>        
+  <h3>构造函数</h3>        
   <p>function Foo(name,age){			//注意首字母大写</p>        
   <p>this.name = name;</p>       
   <p>this.age = age;</p>   
@@ -62,11 +62,11 @@
   <p>//return this</p>      
   <p>}</p>      
   <p>var f = new Foo('zyq',28);</p>     
-  <p>构造函数-扩展</p>     
+  <h3>构造函数-扩展</h3>     
   <p>var a = {};			var a = new Object();</p>  
   <p>var a = [];			var a = new Array();</p>    
   <p>function Foo(){};	var Foo = new Function(){};</p>    
-  <p>原型规则和示例</p>   
+  <h3>原型规则和示例</h3>   
   <p>1.所有引用类型(array object function)都具有对象特性，即可自由扩展属性（除了null）</p>   
   <p>2.所有引用类型都有__proto__属性，属性值是一个普通对象</p>   
   <p>3.所有函数都有一个prototype属性，属性值都是一个普通对象</p>    
@@ -92,7 +92,7 @@
   <p>console.log(item);</p> 
   <p>}</p>     
   <p>}</p>       
-  <p>原型链</p>     
+  <h3>原型链</h3>     
   <p>
       f.__proto__ === Foo.prototype Foo.prototype.__proto__ === Object.prototype Object.prototype.__proto__ = null
   </p>
@@ -100,7 +100,7 @@
   <p>f instanceof Foo </p>    
   <p>f的__proto__一层层往上看能不能找到Foo.prototype</p>   
   <p>f instanceof Object 也是true </p>   
-  <p>原型链继承的例子：</p>   
+  <h3>原型链继承的例子：</h3>   
   <p>function Elem(id){</p> 
   <p>this.el = document.getElementById(id);</p>
   <p>}</p>      
@@ -115,7 +115,7 @@
   <p>}</p>     
   <p>var div1 = new Elem('detail')</p>    
   <p>div1.html();</p>   
-  <p>作用域和闭包</p>    
+  <h3>作用域和闭包</h3>    
   <p>题目：	说一下对变量提升的理解</p>   
   <p>说明this几种不同的使用场景</p>  
   <p>创建10个a标签，点击的时候弹出来对应的序号</p>  
@@ -140,7 +140,7 @@
   <p>}.bind({x:1})</p>
   <p>fn1('zhangsan');//bind必须用在函数表达式最后，也是给this赋值</p>
   <p></p>
-  <h2>作用域</h2>
+  <h3>作用域</h3>
   <p>没有块级作用域,全局作用域和函数作用域</p>
   <p>if(true){</p>
   <p>   var name = 'zhangsan';</p>
