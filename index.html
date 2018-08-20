@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>JS</title>
+  <style>
+      h3{
+          color: red
+      }
+  </style>
 </head>
 <body>
   <p>
@@ -122,8 +127,28 @@
   <p>函数：变量定义undefined、函数声明、this、arguments 	函数</p>  
   <p>this</p>  
   <p>this要在执行时才能确认值</p>
-  <p>作用域</p>   
-  <p>作用域链</p>   
+  <h3>call,apply,bind:</h3>
+  <p>function fn(name){</p>
+  <p>   alert(name);</p>
+  <p>   console.log(this);</p>
+  <p>}</p>
+  <p>fn()//直接调用的时候this === window</p>
+  <p>fn.call({x:1},'zhangsan')//第一个参数是把这个对象赋值给this，第二个参数是传递的参数</p>
+  <p>fn.apply({x:1},['zhangsan'])//和call的区别就是参数作为数组传递</p>
+  <p>var fn1 = function(name){</p>
+  <p>   console.log(this);</p>
+  <p>}.bind({x:1})</p>
+  <p>fn1('zhangsan');//bind必须用在函数表达式最后，也是给this赋值</p>
+  <p></p>
+  <h2>作用域</h2>
+  <p>没有块级作用域,全局作用域和函数作用域</p>
+  <p>if(true){</p>
+  <p>   var name = 'zhangsan';</p>
+  <p>}</p>
+  <p>console.log(name);//可以访问</p>
+  <h3>作用域链</h3>   
+  <p>函数的父级作用域是定义的地方的作用域</p>
+  <p></p>
   <p>闭包</p>     
        
        
